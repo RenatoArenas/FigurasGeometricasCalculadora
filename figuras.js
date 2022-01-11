@@ -1,11 +1,9 @@
 //Código de cuadrado
 console.group("Cuadrado");
 
-const lCuadrado = 6;
+const lCuadrado = 0;
 let perC = 0;
 let areaC = 0;
-
-console.log("Los lados del cuadrado valen: " + lCuadrado + "cm")
 
 function calculosCuadrado(a) {
     perC = a * 4;
@@ -13,9 +11,6 @@ function calculosCuadrado(a) {
     return perC, areaC;
 }
 calculosCuadrado(lCuadrado);
-
-console.log("El perimetro del cuadrado es: " + perC + "cm");
-console.log("El área del cuadrado es: " + areaC + "cm^2");
 
 console.groupEnd();
 
@@ -48,22 +43,72 @@ console.group("Circulo");
 
 const radio = 2;
 const pi = Math.PI;
-let diam = 0;
+let diamCi = 0;
 let perCi = 0;
 let areaCi = 0;
 
 function calculosCirculo(r) {
-    diam = r * 2;
-    perCi = diam * pi;
+    diamCi = r * 2;
+    perCi = diamCi * pi;
     areaCi = (r**2) * pi;
-    return perCi, areaCi;
+    return diamCi, perCi, areaCi;
 }
 
 calculosCirculo(radio);
 
 console.log("El radio es: " + radio);
-console.log("El diametro es: " + diam);
+console.log("El diametro es: " + diamCi);
 console.log("El perimetro del circulo es: " + perCi + "cm");
 console.log("El área del circulo es: " + areaCi + "cm^2");
 
 console.groupEnd();
+
+//HTML interacción
+
+function mostrarCuadrado() {
+    const inpLadoC = document.getElementById("ladoCuadrado");
+    const valLadoC = Number(inpLadoC.value);
+    
+    calculosCuadrado(valLadoC);
+
+    const mostrarPerC = document.getElementById("perimetroCuadrado");
+    mostrarPerC.textContent = "El perímetro es: " + perC;
+
+    const mostrarArC= document.getElementById("areaCuadrado");
+    mostrarArC.textContent = "El área es: " + areaC;
+}
+
+function mostrarTriangulo() {
+    const inpLado1T = document.getElementById("ladoTriangulo1");
+    const inpLado2T = document.getElementById("ladoTriangulo2");
+    const inpBaseT = document.getElementById("baseTriangulo");
+    const inpAlturaT = document.getElementById("alturaTriangulo");
+    const valLado1T = Number(inpLado1T.value);
+    const valLado2T = Number(inpLado2T.value);
+    const valBaseT = Number(inpBaseT.value);
+    const valAlturaT = Number(inpAlturaT.value);
+    
+    calculosTriangulo(valLado1T, valLado2T, valBaseT, valAlturaT);
+
+    const mostrarPerT = document.getElementById("perimetroTriangulo");
+    mostrarPerT.textContent = "El perímetro es: " + perT;
+
+    const mostrarArT = document.getElementById("areaTriangulo");
+    mostrarArT.textContent = "El área es: " + areaT;
+}
+
+function mostrarCirculo() {
+    const inpRadioCi = document.getElementById("radioCirculo");
+    const valRadioCi = Number(inpRadioCi.value);
+    
+    calculosCirculo(valRadioCi);
+
+    const mostrarDiamCi = document.getElementById("diametroCirculo");
+    mostrarDiamCi.textContent = "El diametro es: " + diamCi;
+
+    const mostrarPerCi = document.getElementById("perimetroCirculo");
+    mostrarPerCi.textContent = "El perímetro es: " + perCi;
+
+    const mostrarAreaPerCi = document.getElementById("areaCirculo");
+    mostrarAreaPerCi.textContent = "El area es: " + areaCi;
+}

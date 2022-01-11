@@ -7,9 +7,53 @@
     <title>Figuras geométricas</title>
 </head>
 <body>
-    <h1>Calculadora de Figuras geométricas</h1>
+    <header>
+        <h1>Calculadora de Figuras geométricas</h1>
+        <p>Aquí podras calcular el perímetro y área de algunas figuras geométricas</p>
+    </header>
+    <section>
+        <h2>Cuadrado</h2>
+        <form action="">
+            <label for="ladoCuadrado">Lado (l)</label>
+            <input id="ladoCuadrado" type="number">
 
+            <button type="button" onclick="mostrarCuadrado()">Calcular</button>
 
+            <p id="perimetroCuadrado">El perímetro es: </p>
+            <p id="areaCuadrado">El área es: </p>
+        </form>
+    </section>
+    <section>
+        <h2>Triángulo</h2>
+        <form action="">
+            <label for="ladoTriangulo1">Lado 1 (l1)</label>
+            <input id="ladoTriangulo1" type="number">
+            <label for="ladoTriangulo2">Lado 2 (l2)</label>
+            <input id="ladoTriangulo2" type="number">
+            <label for="baseTriangulo">Base (b)</label>
+            <input id="baseTriangulo" type="number">
+            <label for="alturaTriangulo">Altura (h)</label>
+            <input id="alturaTriangulo" type="number">
+
+            <button type="button" onclick="mostrarTriangulo()">Calcular</button>
+
+            <p id="perimetroTriangulo">El perímetro es: </p>
+            <p id="areaTriangulo">El área es: </p>
+        </form>
+    </section>
+    <section>
+        <h2>Circulo</h2>
+        <form action="">
+            <label for="radioCirculo">Radio (r)</label>
+            <input id="radioCirculo" type="number">
+            
+            <button type="button" onclick="mostrarCirculo()">Calcular</button>
+
+            <p id="diametroCirculo">El diametro es: </p>
+            <p id="perimetroCirculo">El perímetro es: </p>
+            <p id="areaCirculo">El área es: </p>
+        </form>
+    </section>
     <script src="./figuras.js"></script>
 </body>
 </html>
