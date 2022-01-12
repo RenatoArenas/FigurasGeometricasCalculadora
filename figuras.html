@@ -5,55 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figuras geométricas</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>
-        <h1>Calculadora de Figuras geométricas</h1>
-        <p>Aquí podras calcular el perímetro y área de algunas figuras geométricas</p>
+        <div class="calculator-title">
+            <h1>Figuras geométricas</h1>
+            <p>Aquí podras calcular el perímetro y área de algunas figuras geométricas</p>
+        </div>
     </header>
-    <section>
-        <h2>Cuadrado</h2>
-        <form action="">
-            <label for="ladoCuadrado">Lado (l)</label>
-            <input id="ladoCuadrado" type="number">
+    <main>
+        <section class="calculator-figure">
+            <h2>Cuadrado</h2>
+            <ion-icon name="square-outline" class="figure"></ion-icon>
+            <form action="">
+                <input id="ladoCuadrado" type="number" placeholder="Lado (l)">
+    
+                <button type="button" onclick="mostrarCuadrado()">Calcular</button>
 
-            <button type="button" onclick="mostrarCuadrado()">Calcular</button>
+            </form>
+            <span id="valoresCuadrado" class="figure-values"></span>
+            <p>El perímetro es: <b id="perimetroCuadrado"></b></p>
+            <p>El área es: <b id="areaCuadrado"></b></p>
+        </section>
+        <section class="calculator-figure">
+            <h2>Triángulo</h2>
+            <ion-icon name="triangle-outline" class="figure"></ion-icon>
+            <form action="">
+                <input id="ladoTriangulo1" type="number" placeholder="Lado 1 (l1)">
+                <input id="ladoTriangulo2" type="number" placeholder="Lado 2 (l2)">
+                <input id="baseTriangulo" type="number" placeholder="Base (b)">
+                <input id="alturaTriangulo" type="number" placeholder="Altura (h)">
+    
+                <button type="button" onclick="mostrarTriangulo()">Calcular</button>
+    
+            </form>
 
-            <p id="perimetroCuadrado">El perímetro es: </p>
-            <p id="areaCuadrado">El área es: </p>
-        </form>
-    </section>
-    <section>
-        <h2>Triángulo</h2>
-        <form action="">
-            <label for="ladoTriangulo1">Lado 1 (l1)</label>
-            <input id="ladoTriangulo1" type="number">
-            <label for="ladoTriangulo2">Lado 2 (l2)</label>
-            <input id="ladoTriangulo2" type="number">
-            <label for="baseTriangulo">Base (b)</label>
-            <input id="baseTriangulo" type="number">
-            <label for="alturaTriangulo">Altura (h)</label>
-            <input id="alturaTriangulo" type="number">
+            <span id="valoresTriangulo" class="figure-values"></span>
+            <p>El perímetro es: <b id="perimetroTriangulo"></b></p>
+            <p>El área es: <b id="areaTriangulo"></b></p>
+        </section>
+        <section class="calculator-figure">
+            <h2>Circulo</h2>
+            <ion-icon name="ellipse-outline" class="figure"></ion-icon>
+            <form action="">
+                <input id="radioCirculo" type="number" placeholder="Radio (r)">
+                
+                <button type="button" onclick="mostrarCirculo()">Calcular</button>
+    
+            </form>
 
-            <button type="button" onclick="mostrarTriangulo()">Calcular</button>
-
-            <p id="perimetroTriangulo">El perímetro es: </p>
-            <p id="areaTriangulo">El área es: </p>
-        </form>
-    </section>
-    <section>
-        <h2>Circulo</h2>
-        <form action="">
-            <label for="radioCirculo">Radio (r)</label>
-            <input id="radioCirculo" type="number">
-            
-            <button type="button" onclick="mostrarCirculo()">Calcular</button>
-
-            <p id="diametroCirculo">El diametro es: </p>
-            <p id="perimetroCirculo">El perímetro es: </p>
-            <p id="areaCirculo">El área es: </p>
-        </form>
-    </section>
+            <span id="valoresCirculo" class="figure-values"></span>
+            <p>El diametro es: <b id="diametroCirculo"></b></p>
+            <p>El perímetro es: <b id="perimetroCirculo"></b></p>
+            <p>El área es: <b id="areaCirculo"></b></p>
+        </section>
+    </main>
     <script src="./figuras.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

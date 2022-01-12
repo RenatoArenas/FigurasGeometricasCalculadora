@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    width: 100%;
+    height: auto;
+}
+.calculator-title {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background-color:steelblue;
+    text-align: center;
+}
+.calculator-title h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+.calculator-title p {
+    font-size: 1.4rem;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculator-figure {
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid steelblue;
+    border-radius: 10px;
+}
+.calculator-figure h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.calculator-figure .figure {
+    display: block;
+    font-size: 10rem;
+    margin: 0 auto;
+    color: steelblue;
+    margin-bottom: 10px;
+}
+.calculator-figure form {
+    display: flex;
+    flex-direction: column;
+}
+.calculator-figure form input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding: 2px;
+    font-size: 1.3rem;
+}
+.calculator-figure form button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    margin: 10px 0;
+}
+.calculator-figure form button:hover {
+    background-color: steelblue;
+    color: white;
+    border: 2px solid steelblue;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.calculator-figure .figure-values {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.calculator-figure p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+@media only screen and (min-width: 500px) {
+    .calculator-figure {
+        width: 45%;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .calculator-figure {
+        width: 30%;
+        padding-top: 20px;
+    }
+    .calculator-figure h2 {
+        font-size: 2rem;
+    }
+    .calculator-figure form input {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 1.4rem;
+    }
+    .calculator-figure form button {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.4rem;
+        padding: 5px;
+        margin: 10px 0;
+    }
+    .calculator-figure p {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+}

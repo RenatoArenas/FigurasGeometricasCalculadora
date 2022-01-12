@@ -6,8 +6,14 @@ let perC = 0;
 let areaC = 0;
 
 function calculosCuadrado(a) {
-    perC = a * 4;
-    areaC = a ** 2;
+    if (a > 0) {
+        perC = a * 4;
+        areaC = a ** 2;
+    }
+    else {
+        perC = "";
+        areaC = "";
+    }
     return perC, areaC;
 }
 calculosCuadrado(lCuadrado);
@@ -27,8 +33,18 @@ let areaT = 0;
 console.log("Los lados del triángulo valen: " + lTriangulo1 + "cm, " + lTriangulo2 + "cm, " + bTriangulo + "cm");
 
 function calculosTriangulo(l1, l2, b, h) {
-    perT = l1 + l2 + b;
-    areaT = (b * h)/2;
+    if (l1 > 0 && l2 > 0 && b > 0) {
+        perT = l1 + l2 + b;
+    }
+    else {
+        perT = "";
+    }
+    if (b > 0 && h > 0) {
+        areaT = (b * h)/2;
+    }
+    else {
+        areaT = "";
+    }
     return perT, areaT;
 }
 calculosTriangulo(lTriangulo1, lTriangulo2, bTriangulo, hTriangulo);
@@ -48,9 +64,16 @@ let perCi = 0;
 let areaCi = 0;
 
 function calculosCirculo(r) {
-    diamCi = r * 2;
-    perCi = diamCi * pi;
-    areaCi = (r**2) * pi;
+    if (r > 0) {
+        diamCi = r * 2;
+        perCi = diamCi * pi;
+        areaCi = (r**2) * pi;
+    }
+    else {
+        diamCi = "";
+        perCi = "";
+        areaCi = "";
+    }
     return diamCi, perCi, areaCi;
 }
 
@@ -71,11 +94,16 @@ function mostrarCuadrado() {
     
     calculosCuadrado(valLadoC);
 
+    const valC = document.getElementById("valoresCuadrado");
+    valC.textContent = "l = " + valLadoC;
+
     const mostrarPerC = document.getElementById("perimetroCuadrado");
-    mostrarPerC.textContent = "El perímetro es: " + perC;
+    mostrarPerC.textContent = perC;
 
     const mostrarArC= document.getElementById("areaCuadrado");
-    mostrarArC.textContent = "El área es: " + areaC;
+    mostrarArC.textContent = areaC;
+
+    inpLadoC.value = "";
 }
 
 function mostrarTriangulo() {
@@ -90,11 +118,19 @@ function mostrarTriangulo() {
     
     calculosTriangulo(valLado1T, valLado2T, valBaseT, valAlturaT);
 
+    const valT = document.getElementById("valoresTriangulo");
+    valT.textContent = "l1 = " + valLado1T + ", l2 = " + valLado2T + ", b = " + valBaseT + ", h = " + valAlturaT;
+
     const mostrarPerT = document.getElementById("perimetroTriangulo");
-    mostrarPerT.textContent = "El perímetro es: " + perT;
+    mostrarPerT.textContent = perT;
 
     const mostrarArT = document.getElementById("areaTriangulo");
-    mostrarArT.textContent = "El área es: " + areaT;
+    mostrarArT.textContent = areaT;
+
+    inpLado1T.value = "";
+    inpLado2T.value = "";
+    inpBaseT.value = "";
+    inpAlturaT.value = "";
 }
 
 function mostrarCirculo() {
@@ -103,12 +139,17 @@ function mostrarCirculo() {
     
     calculosCirculo(valRadioCi);
 
+    const valCi = document.getElementById("valoresCirculo");
+    valCi.textContent = "r = " + valRadioCi;
+
     const mostrarDiamCi = document.getElementById("diametroCirculo");
-    mostrarDiamCi.textContent = "El diametro es: " + diamCi;
+    mostrarDiamCi.textContent = diamCi;
 
     const mostrarPerCi = document.getElementById("perimetroCirculo");
-    mostrarPerCi.textContent = "El perímetro es: " + perCi;
+    mostrarPerCi.textContent = perCi;
 
     const mostrarAreaPerCi = document.getElementById("areaCirculo");
-    mostrarAreaPerCi.textContent = "El area es: " + areaCi;
+    mostrarAreaPerCi.textContent = areaCi;
+
+    inpRadioCi.value = "";
 }
