@@ -32,17 +32,55 @@ main {
     flex-wrap: wrap;
 }
 .calculator-figure {
+    position: relative;
     width: 80%;
-    height: auto;
+    height: autos;
     margin: 20px auto;
-    padding: 10px;
+    padding: 20px 10px;
     border: 2px solid steelblue;
     border-radius: 10px;
+    overflow: hidden;
+}
+.container-title {
+    width: 200%;
+    display: flex;
+}
+.arrow-title {
+    position: absolute;
+    font-size: 1.8rem;
+    line-height: 10px;
+    padding-top: 4px;
+}
+.arrow-title:hover {
+    cursor: pointer;
+}
+.arrow-left {
+    left: 10px;
+    display: none;
+}
+.arrow-right {
+    right: 10px;
+}
+.calculator-figure .arrow-none {
+    display: none;
+}
+.title {
+    margin-left: 0;
+}
+.slide-title {
+    margin-left: -124%;
+    transition: margin-left 0.5s;
+}
+.calculator-figure .form-none {
+    display: none;
 }
 .calculator-figure h2 {
+    display: block;
+    width: 100%;
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 10px;
+    transition: margin-left 0.5s;
 }
 .calculator-figure .figure {
     display: block;
@@ -85,12 +123,14 @@ main {
 @media only screen and (min-width: 500px) {
     .calculator-figure {
         width: 45%;
+        height: 450px;
     }
 }
 @media only screen and (min-width: 800px) {
     .calculator-figure {
         width: 30%;
         padding-top: 20px;
+        height: 550px;
     }
     .calculator-figure h2 {
         font-size: 2rem;
