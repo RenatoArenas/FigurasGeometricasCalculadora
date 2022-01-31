@@ -1,7 +1,5 @@
 //Código de cuadrado
-console.group("Cuadrado");
 
-const lCuadrado = 0;
 let perC = 0;
 let areaC = 0;
 
@@ -16,21 +14,13 @@ function calculosCuadrado(a) {
     }
     return perC, areaC;
 }
-calculosCuadrado(lCuadrado);
 
-console.groupEnd();
 
 //Código de triángulo
-console.group("Triangulo");
 
-const lTriangulo1 = 3;
-const lTriangulo2 = 4;
-const bTriangulo = 5;
-const hTriangulo = 5.5;
 let perT = 0;
 let areaT = 0;
 
-console.log("Los lados del triángulo valen: " + lTriangulo1 + "cm, " + lTriangulo2 + "cm, " + bTriangulo + "cm");
 
 function calculosTriangulo(l1, l2, b, h) {
     if (l1 > 0 && l2 > 0 && b > 0) {
@@ -47,17 +37,27 @@ function calculosTriangulo(l1, l2, b, h) {
     }
     return perT, areaT;
 }
-calculosTriangulo(lTriangulo1, lTriangulo2, bTriangulo, hTriangulo);
 
-console.log("El perimetro del triangulo es: " + perT + "cm");
-console.log("El área del triangulo es: " + areaT + "cm^2");
+//Código de triangulo isósceles
 
-console.groupEnd();
-
+const lTrianguloI1 = 2;
+const lTrianguloI2 = 2;
+const bTrianguloI = 3;
+let hTI = 0;
+function calculosTrianguloIsosceles(l1, l2, b) {
+    if (l1 == l2 && 2*l1 >= b) {
+        hTI = Math.sqrt(l1**2 - (b**2/4));
+    }
+    else {
+        hTI = "El triangulo no es isósceles o es imposible";
+    }
+    if (hTI == 0) {
+        hTI = "El triangulo no es isósceles o es imposible"
+    }
+    return hTI;
+}
 //Código de circulo
-console.group("Circulo");
 
-const radio = 2;
 const pi = Math.PI;
 let diamCi = 0;
 let perCi = 0;
@@ -77,14 +77,8 @@ function calculosCirculo(r) {
     return diamCi, perCi, areaCi;
 }
 
-calculosCirculo(radio);
 
-console.log("El radio es: " + radio);
-console.log("El diametro es: " + diamCi);
-console.log("El perimetro del circulo es: " + perCi + "cm");
-console.log("El área del circulo es: " + areaCi + "cm^2");
 
-console.groupEnd();
 
 //HTML interacción
 
@@ -131,6 +125,28 @@ function mostrarTriangulo() {
     inpLado2T.value = "";
     inpBaseT.value = "";
     inpAlturaT.value = "";
+}
+
+function mostrarTrianguloIsosceles() {
+    const inpLado1TI = document.getElementById("ladoTrianguloI1");
+    const inpLado2TI = document.getElementById("ladoTrianguloI2");
+    const inpBaseTI = document.getElementById("baseTrianguloI");
+    const valLado1TI = Number(inpLado1TI.value);
+    const valLado2TI = Number(inpLado2TI.value);
+    const valBaseTI = Number(inpBaseTI.value);
+
+    calculosTrianguloIsosceles(valLado1TI, valLado2TI, valBaseTI);
+    console.log(hTI);
+
+    const valTI = document.getElementById("valoresTrianguloI");
+    valTI.textContent = "l1 = " + valLado1TI + ", l2 = " + valLado2TI + ", b = " + valBaseTI;
+
+    const mostrarAltTI = document.getElementById("alturaTrianguloI");
+    mostrarAltTI.textContent = hTI;
+
+    inpLado1TI.value = "";
+    inpLado2TI.value = "";
+    inpBaseTI.value = "";
 }
 
 function mostrarCirculo() {
